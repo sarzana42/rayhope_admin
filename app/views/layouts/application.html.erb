@@ -4,11 +4,60 @@
   <title>Rayhope</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+   <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
+<body class="skin-blue fixed">
+ <div class="wrapper">
+   <header class="main-header">
+     <a href="/" class="logo">Rayhope</a>
+     <nav class="navbar navbar-static-top" role="navigation">
+        <a class="sidebar-toggle" href="#" data-toggle="offcanvas" role="button"></a>
+ 
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+          </ul>
+        </div>
+     </nav>
+   </header>
+ 
+   <aside class="main-sidebar">
+     <section class="sidebar">
+       <ul class="sidebar-menu">
+         <li class="header">メニュー</li>
+         <li>
+           <%= link_to(customers_path) do %>
+             <i class="fa fa-circle-o text-info"></i>顧客管理
+           <% end %>
+         </li>
+         <li>
+           <%= link_to(customers_path) do %>
+             <i class="fa fa-circle-o text-warning"></i>メニュー 2
+           <% end %>
+         </li>
+         <li>
+           <%= link_to(customers_path) do %>
+             <i class="fa fa-circle-o text-danger"></i>メニュー 3
+           <% end %>
+         </li>
+       </ul>
+     </section>
+   </aside>
+ 
+   <div class="content-wrapper">
+     <% if notice %>
+       <%= notice %>
+    <% end %>
+    <%= yield %>
+   </div>
+</div><!-- .wrapper -->
+ 
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
 
 </body>
 </html>

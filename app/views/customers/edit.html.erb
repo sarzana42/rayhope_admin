@@ -1,0 +1,118 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>登録情報更新</h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <%= form_for(@customer, html: { class: "form-horizontal" }) do |f| %>
+        <% if @customer.errors.present? %>
+           <%= alert %>
+           <% @customer.errors.full_messages.each do |full_message| %>
+             <%= full_message %>
+          <% end %>
+        <% end %>
+
+        <div class="form-group">
+          <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.text_field :name1, class: 'form-control' %>
+          </div>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.text_field :name2, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="kana" class="col-xs-12 col col-sm-4 col-md-3 control-label">お名前（フリガナ）</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.text_field :kana1, class: 'form-control' %>
+          </div>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.text_field :kana2, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="zipcode" class="col col-xs-12 col-sm-4 col-md-3 control-label">郵便番号</label>
+          <div class="col col-xs-7 col-sm-4 col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon">〒</span>
+              <%= f.text_field :zip, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-xs-offset-5 col-sm-offset-4 col-md-offset-5"></div>
+        </div>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">都道府県</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= f.text_field :address1, class: 'form-control' %>
+              <p class="help-block">（例:東京都）</p>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">市町村</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= f.text_field :address2, class: 'form-control' %>
+              <p class="help-block">（例:東村山市、渋谷区等）</p>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">マンション名等</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= f.text_field :address3, class: 'form-control' %>
+              <p class="help-block">（例:ビル名）</p>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">電話番号</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= f.text_field :tel1, class: 'form-control' %>
+              <p class="help-block">（例:08012345678）</p>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">携帯電話</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= f.text_field :tel2, class: 'form-control' %>
+              <p class="help-block">（例:08012345678）</p>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">FAX番号</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= f.text_field :fax, class: 'form-control' %>
+              <p class="help-block">（例:07712345678）</p>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="col col-xs-12 col-sm-4 col-md-3 control-label">メールアドレス</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+            <%= f.text_field :email, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+
+        <div class="form-group">
+          <div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
+            <%= f.submit class: "btn btn-primary" %>
+          </div>
+        </div>
+    </div>
+  </div><!-- .box -->
+<% end %>
+
+</section>

@@ -1,0 +1,105 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>登録画面</h1>
+  <br>
+  <p><%= link_to "一覧に戻る", customers_path %></p>
+  <br>
+  （<%= link_to "編集する", edit_customer_path %>｜
+<%= link_to "削除する", customer_path, method: :delete, data: { confirm: "本当によろしいですか？"} %>）
+
+</section>
+
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <div class="form-group">
+          <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.name1 %>
+          </div>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.name2 %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="kana" class="col-xs-12 col col-sm-4 col-md-3 control-label">お名前（フリガナ）</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.kana1 %>
+          </div>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.kana2 %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="zipcode" class="col col-xs-12 col-sm-4 col-md-3 control-label">郵便番号</label>
+          <div class="col col-xs-7 col-sm-4 col-md-4">
+            <div class="input-group">
+              <%= @customer.zip %>
+            </div>
+          </div>
+          <div class="col-xs-offset-5 col-sm-offset-4 col-md-offset-5"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">都道府県</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= @customer.address1 %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">市町村</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= @customer.address2 %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">マンション名等</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= @customer.address3 %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">電話番号</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= @customer.tel1 %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">携帯電話</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= @customer.tel2 %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">FAX番号</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= @customer.fax %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">メールアドレス</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+              <%= @customer.email %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
+      
+    </div>
+  </div>    
+</section>
