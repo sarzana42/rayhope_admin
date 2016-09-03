@@ -11,10 +11,15 @@
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
   <%= csrf_meta_tags %>
 </head>
-<body class="skin-blue fixed">
+<body class="skin-blue sidebar-mini">
  <div class="wrapper">
    <header class="main-header">
-     <a href="/" class="logo">Rayhope</a>
+     <a href="/" class="logo">
+      <span class="logo-mini">
+       <b>R</b>
+      </span>
+      <span class="logo-lg"><b>Ray</b>hope</span> 
+     </a>
      <nav class="navbar navbar-static-top" role="navigation">
         <a class="sidebar-toggle" href="#" data-toggle="offcanvas" role="button"></a>
  
@@ -27,21 +32,31 @@
  
    <aside class="main-sidebar">
      <section class="sidebar">
+      
        <ul class="sidebar-menu">
-         <li class="header">メニュー</li>
-         <li>
+        
+        <li class="header">メニュー</li>
+        
+         <li class="treeview">
            <%= link_to(customers_path) do %>
-             <i class="fa fa-circle-o text-info"></i>顧客管理
+             <i class="fa fa-circle-o text-info">
+             </i>
+              <span>顧客管理</span>
+           <% end %>
+           
+         </li>
+         <li class="treeview">
+           <%= link_to(customers_path) do %>
+             <i class="fa fa-circle-o text-warning">
+             </i>
+             <span>メニュー 2</span>
            <% end %>
          </li>
-         <li>
+         <li class="treeview">
            <%= link_to(customers_path) do %>
-             <i class="fa fa-circle-o text-warning"></i>メニュー 2
-           <% end %>
-         </li>
-         <li>
-           <%= link_to(customers_path) do %>
-             <i class="fa fa-circle-o text-danger"></i>メニュー 3
+             <i class="fa fa-circle-o text-danger">
+             </i>
+             <span>メニュー 3</span>
            <% end %>
          </li>
        </ul>
