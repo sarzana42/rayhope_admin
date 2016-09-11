@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">  
+<section class="content-header">
+
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+<br>
+  <br>
+  （<%= link_to "編集する", edit_user_path %>｜
+<%= link_to "削除する", user_path, method: :delete, data: { confirm: "本当によろしいですか？"} %>）
+</section>
+
+<section class="content">
+    <div class="box">
+        <div class="box-body">
+            <div class="form-group">
+              <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
+              <div class="col col-xs-5 col-sm-3 col-md-3">
+                <%= @user.name %>
+              </div>
+              <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">メールアドレス</label>
+              <div class="col col-xs-5 col-sm-3 col-md-3">
+                <%= @user.email %>
+              </div>
+              <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">パスワード</label>
+              <div class="col col-xs-5 col-sm-3 col-md-3">
+                <%= @user.password %>
+              </div>
+              <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">パスワード確認</label>
+              <div class="col col-xs-5 col-sm-3 col-md-3">
+                <%= @user.password_confirmation %>
+              </div>
+              <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+</section>
+</div>
+</div>

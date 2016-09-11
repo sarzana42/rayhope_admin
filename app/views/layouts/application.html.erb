@@ -16,43 +16,13 @@
    
    <%= render 'layouts/header' %>
  
-   <aside class="main-sidebar">
-     <section class="sidebar">
-      
-       <ul class="sidebar-menu">
-        
-        <li class="header">メニュー</li>
-        
-         <li class="treeview">
-           <%= link_to(customers_path) do %>
-             <i class="fa fa-circle-o text-info">
-             </i>
-              <span>顧客管理</span>
-           <% end %>
-           
-         </li>
-         <li class="treeview">
-           <%= link_to(customers_path) do %>
-             <i class="fa fa-circle-o text-warning">
-             </i>
-             <span>メニュー 2</span>
-           <% end %>
-         </li>
-         <li class="treeview">
-           <%= link_to(customers_path) do %>
-             <i class="fa fa-circle-o text-danger">
-             </i>
-             <span>メニュー 3</span>
-           <% end %>
-         </li>
-       </ul>
-     </section>
-   </aside>
- 
    <div class="content-wrapper">
      <% if notice %>
        <%= notice %>
     <% end %>
+    <% flash.each do |message_type, message| %> <!-- ここから -->
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %> <!-- ここまで追加 -->
     <%= yield %>
    </div>
 </div><!-- .wrapper -->
