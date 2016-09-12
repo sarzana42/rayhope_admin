@@ -18,16 +18,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= gravatar_for @user %>
+              <%= gravatar_for current_user %>
   
-              <span class="hidden-xs"><%= @user.name %></span>
+              <span class="hidden-xs"><%= current_user.name %></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <%= gravatar_for @user %>
+                <%= gravatar_for current_user %>
                 <p>
-                  <%= @user.name %>- 本部管理者
+                  <%= current_user.name %>- 本部管理者
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
