@@ -14,7 +14,113 @@
 <body class="skin-green sidebar-mini">
  <div class="wrapper">
    
-   <%= render 'layouts/header' %>
+   <header class="main-header">
+     <a href="/" class="logo">
+      <span class="logo-mini">
+       <b>R</b>
+      </span>
+      <span class="logo-lg"><b>Ray</b>hope</span> 
+     </a>
+     <nav class="navbar navbar-static-top" role="navigation">
+        <a class="sidebar-toggle" href="#" data-toggle="offcanvas" role="button"></a>
+ 
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Help", '#' %></li>			
+        <% if logged_in? %>
+           
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= gravatar_for current_user, { size: 20 } %>
+  
+              <span class="hidden-xs"><%= current_user.name %></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <%= gravatar_for current_user, { size: 60 } %>
+                <p>
+                  <%= current_user.name %>- 本部管理者
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <%= link_to "Profile", current_user %>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <%= link_to "Setting", '#' %>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <%= link_to "Setting", '#' %>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <%= link_to "Setting", '#' %>
+                </div>
+                <div class="pull-right">
+                  <%= link_to "Log out", logout_path, method: "delete" %>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        
+        </div>
+     </nav>
+   </header>
+   <aside class="main-sidebar">
+     <section class="sidebar">
+      
+       <ul class="sidebar-menu">
+        
+        <li class="header">メニュー</li>
+        
+         <li class="treeview">
+           <%= link_to(customers_path) do %>
+             <i class="fa fa-circle-o text-info">
+             </i>
+              <span>顧客管理</span>
+           <% end %>
+           
+         </li>
+         <li class="treeview">
+           <%= link_to(customers_path) do %>
+             <i class="fa fa-circle-o text-warning">
+             </i>
+             <span>注文管理</span>
+           <% end %>
+         </li>
+         <li class="treeview">
+           <%= link_to(customers_path) do %>
+             <i class="fa fa-circle-o text-danger">
+             </i>
+             <span>売上管理</span>
+           <% end %>
+         </li>
+         
+       </ul>
+       <ul class="sidebar-menu">
+        <li class="header">管理者メニュー</li>
+        <li class="treeview">
+           <%= link_to(users_path) do %>
+             <i class="fa fa-circle-o text-danger">
+             </i>
+             <span>管理者一覧</span>
+           <% end %>
+         </li>
+       </ul>
+     </section>
+   </aside>
+   
  
    <div class="content-wrapper">
      <% if notice %>
@@ -25,7 +131,23 @@
     <% end %> <!-- ここまで追加 -->
     <%= yield %>
    </div>
+   <% else %>
+		        <li><%= link_to "Log in", login_path %></li>
+		      </ul>
+		     </div>
+     </nav>
+   </header>
 </div><!-- .wrapper -->
+<div class="content">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+     <%= yield %>
+    </div>
+  </div>
+</div>
+   
+   <% end %>
+
  
  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
  <script src="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
