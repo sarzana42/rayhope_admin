@@ -8,14 +8,19 @@
   <div class="box">
     <div class="box-header">
       <%= link_to "新規登録", new_customer_path %>
-      <div class="box-tools">
-        <div class="input-group" style="width: 150px;">
-          <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
-          <div class="input-group-btn">
-            <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-          </div>
-        </div>
+      
+      <!-- 検索 -->
+      <div class="box-tools form-inline">
+          <%= search_form_for(@q, method: :get) do |f| %>
+            <div class="form-group">
+              <%= f.text_field :name1_or_name2_or_address1_or_address2_or_address3_or_tel1_or_tel2_or_fax_or_email_cont, class: "form-control", placeholder: "複数条件部分一致" %>
+            </div>
+            <div class="form-group">
+              <%= f.submit '検索', class: "btn btn-primary" %>
+            </div>
+          <% end %>
       </div>
+      <!-- 検索end -->
     </div><!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
       <table class="table table-hover">
