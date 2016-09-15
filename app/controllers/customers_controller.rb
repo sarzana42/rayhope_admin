@@ -4,6 +4,12 @@ class CustomersController < ApplicationController
         # @customers = Customer.all
         @q = Customer.ransack(params[:q])
         @customers = @q.result
+        
+        respond_to do |format|
+            format.html
+            format.csv { send_data @customers.to_csv }
+        end
+        
     end
     
     def new
