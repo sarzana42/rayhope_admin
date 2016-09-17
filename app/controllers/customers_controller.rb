@@ -8,6 +8,7 @@ class CustomersController < ApplicationController
         respond_to do |format|
             format.html
             format.csv { send_data @customers.to_csv }
+            format.xls { send_data @customers.to_csv(col_sep: "\t") }
         end
         
     end
@@ -48,6 +49,12 @@ class CustomersController < ApplicationController
         @customer = Customer.find params[:id]
         @customer.destroy
         redirect_to customers_path, notice: '削除しました。'
+    end
+    
+    def import
+        # fileはtmpに自動で一時保存される
+        Customer.import(params[:file])
+        redirect_to root_url, notice: "商品を追加しました。"
     end
     
     private
