@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
+  
+namespace :rayadmins do
   root 'admins#home'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources 'customers', only: :index do
     collection { post :import }
   end
-  
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

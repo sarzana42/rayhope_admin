@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Rayadmin::SessionsController < RayadminsController
   def new
   end
   

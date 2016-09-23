@@ -18,7 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "ransack"
 gem 'carrierwave'
 gem 'cloudinary'
-gem 'roo'
+# gem 'roo'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

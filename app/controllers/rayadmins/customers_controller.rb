@@ -1,4 +1,4 @@
-class CustomersController < ApplicationController
+class Rayadmin::CustomersController < RayadminsController
     
     def index
         # @customers = Customer.all

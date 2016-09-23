@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Rayadmin::UsersController < RayadminsController
   def index
     # @users = User.all
     @q = User.ransack(params[:q])
