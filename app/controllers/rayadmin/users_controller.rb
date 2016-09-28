@@ -1,4 +1,4 @@
-class Rayadmin::UsersController < RayadminsController
+class Rayadmin::UsersController < Rayadmin::RayadminController
   def index
     # @users = User.all
     @q = User.ransack(params[:q])
@@ -13,7 +13,7 @@ class Rayadmin::UsersController < RayadminsController
     @user = User.new(user_params)
      if @user.save
        flash[:success] = "Welcome to the Sample App!"
-       redirect_to @user
+       redirect_to [:rayadmin,@user]
      else
        render 'new'
      end
@@ -30,7 +30,7 @@ class Rayadmin::UsersController < RayadminsController
   def update
         @user = User.find params[:id]
         if @user.update(user_params)
-            redirect_to @user
+            redirect_to [:rayadmin, @user]
         else
             render 'edit'
         end
@@ -38,7 +38,7 @@ class Rayadmin::UsersController < RayadminsController
     def destroy
         @user = User.find params[:id]
         @user.destroy
-        redirect_to users_path, notice: '削除しました。'
+        redirect_to rayadmin_users_path, notice: '削除しました。'
     end
   
   

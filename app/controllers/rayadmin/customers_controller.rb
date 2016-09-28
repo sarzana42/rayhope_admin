@@ -1,4 +1,4 @@
-class Rayadmin::CustomersController < RayadminsController
+class Rayadmin::CustomersController < Rayadmin::RayadminController
     
     def index
         # @customers = Customer.all
@@ -40,7 +40,7 @@ class Rayadmin::CustomersController < RayadminsController
     def update
         @customer = Customer.find params[:id]
         if @customer.update(customer_params)
-            redirect_to @customer
+            redirect_to [:rayadmin, @customer]
         else
             render 'edit'
         end
@@ -48,7 +48,7 @@ class Rayadmin::CustomersController < RayadminsController
     def destroy
         @customer = Customer.find params[:id]
         @customer.destroy
-        redirect_to customers_path, notice: '削除しました。'
+        redirect_to rayadmin_customers_path, notice: '削除しました。'
     end
     
     def import

@@ -1,1 +1,37 @@
-test
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rayhope</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="skin-green sidebar-mini">
+<div class="wrapper">
+
+<!-- コンテンツ -->
+<div class="content-wrapper">
+  <% if notice %>
+    <%= notice %>
+  <% end %>
+  <% flash.each do |message_type, message| %> <!-- ここから -->
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %> <!-- ここまで追加 -->
+  <%= link_to '管理者', rayadmin_root_path %>
+  <%= yield %>
+</div>
+
+</div><!-- /.wrapper -->
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
+
+</body>
+</html>

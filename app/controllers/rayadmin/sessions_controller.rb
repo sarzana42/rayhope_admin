@@ -1,4 +1,4 @@
-class Rayadmin::SessionsController < RayadminsController
+class Rayadmin::SessionsController < Rayadmin::RayadminController
   def new
   end
   
@@ -7,7 +7,7 @@ class Rayadmin::SessionsController < RayadminsController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       flash[:info] = "{@user.name}として、ログインしました。"
-      redirect_to @user
+      redirect_to [:rayadmin, @user]
     else
       flash[:danger] = "メールアドレスかパスワードが一致しません"
       render 'new'
@@ -16,7 +16,7 @@ class Rayadmin::SessionsController < RayadminsController
   
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to rayadmin_login_path
   end
   
 end

@@ -18,7 +18,7 @@
 
 <!-- ヘッダー -->
 <header class="main-header">
-  <a href="/" class="logo">
+  <a href="/rayadmin" class="logo">
     <span class="logo-mini">
       <b>R</b>
     </span>
@@ -29,8 +29,8 @@
 
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Home", rayadmin_path %></li>
-        <li><%= link_to "Help", '#' %></li>
+        <li><%= link_to "Home", rayadmin_root_path %></li>
+        <li><%= link_to "Userpage", root_path %></li>
 
         <% if logged_in? %>
 
@@ -38,7 +38,7 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <%= gravatar_for current_user, { size: 20 } %>
+            <%= gravatar_for current_user, { size: 16 } %>
             <span class="hidden-xs"><%= current_user.name %></span>
           </a>
           <ul class="dropdown-menu">
@@ -54,7 +54,7 @@
             <li class="user-body">
               <div class="row">
                 <div class="col-xs-4 text-center">
-                  <%= link_to "Profile", current_user %>
+                  <%= link_to "Profile", rayadmin_user_path(current_user) %>
                 </div>
                 <div class="col-xs-4 text-center">
                   <%= link_to "Setting", '#' %>
@@ -70,7 +70,7 @@
                 <%= link_to "Setting", '#' %>
               </div>
               <div class="pull-right">
-                <%= link_to "Log out", logout_path, method: "delete" %>
+                <%= link_to "Log out", rayadmin_logout_path, method: "delete" %>
               </div>
             </li>
           </ul>
@@ -79,7 +79,7 @@
         <% else %>
 
         <!-- ログアウト中の表示 -->
-        <li><%= link_to "Log in", login_path %></li>
+        <li><%= link_to "Log in", rayadmin_login_path %></li>
 
         <% end %>
       </ul>
@@ -95,19 +95,19 @@
     <ul class="sidebar-menu">
       <li class="header">メニュー</li>
       <li class="treeview">
-        <%= link_to(customers_path) do %>
+        <%= link_to(rayadmin_customers_path) do %>
           <i class="fa fa-circle-o text-info"></i>
            <span>顧客管理</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to(customers_path) do %>
+        <%= link_to(rayadmin_ordersheets_index_path) do %>
           <i class="fa fa-circle-o text-warning"></i>
           <span>注文管理</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to(customers_path) do %>
+        <%= link_to(rayadmin_customers_path) do %>
           <i class="fa fa-circle-o text-danger"></i>
           <span>売上管理</span>
         <% end %>
@@ -116,7 +116,7 @@
     <ul class="sidebar-menu">
      <li class="header">管理者メニュー</li>
      <li class="treeview">
-        <%= link_to(users_path) do %>
+        <%= link_to(rayadmin_users_path) do %>
           <i class="fa fa-circle-o text-danger"></i>
           <span>管理者一覧</span>
         <% end %>

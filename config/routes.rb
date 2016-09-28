@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
-namespace :rayadmins do
+  namespace :rayadmin do
+  get 'ordersheets/index'
+  end
+
+  root 'top#index'
+
+namespace :rayadmin do
   root 'admins#home'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
@@ -9,6 +15,7 @@ namespace :rayadmins do
   
   resources :users
   resources :customers
+  resources :ordersheets
   
   resources 'customers', only: :index do
     collection { post :import }

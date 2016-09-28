@@ -1,0 +1,17 @@
+<%= form_for(@ordersheet, html: { class: "form-horizontal"}, url: rayadmin_ordersheets_path) do |f| %>
+顧客No：<%= f.text_field :os_customerid, class: 'form-control' %>
+注文No：<%= f.text_field :os_orderid, class: 'form-control' %>
+新規・追加：<%= f.text_field :os_neworder, class: 'form-control' %>
+注文名：<%= f.text_field :os_ordername, class: 'form-control' %>
+グループ名：<%= f.text_field :os_groupname, class: 'form-control' %>
+顧客（氏）：<%= f.text_field :os_customername1, class: 'form-control' %>
+顧客（名）：<%= f.text_field :os_customername2, class: 'form-control' %>
+郵便番号：<%= f.text_field :os_zip, class: 'form-control' %>
+都道府県：<%= f.text_field :os_address1, class: 'form-control' %>
+市町村：<%= f.text_field :os_address2, class: 'form-control' %>
+それ以降：<%= f.text_field :os_address3, class: 'form-control' %>
+TEL1: <%= f.text_field :os_tel1, class: 'form-control' %>
+TEL2: <%= f.text_field :os_tel2, class: 'form-control' %>
+FAX: <%= f.text_field :os_fax, class: 'form-control' %>
+メールアドレス：<%= f.text_field :os_email, class: 'form-control' %>
+<% end %>
