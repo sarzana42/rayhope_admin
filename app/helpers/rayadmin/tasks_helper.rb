@@ -1,0 +1,2 @@
+module Rayadmin::TasksHelper
+end

@@ -101,7 +101,7 @@
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to(rayadmin_ordersheets_index_path) do %>
+        <%= link_to(rayadmin_ordersheets_path) do %>
           <i class="fa fa-circle-o text-warning"></i>
           <span>注文管理</span>
         <% end %>
@@ -119,6 +119,12 @@
         <%= link_to(rayadmin_users_path) do %>
           <i class="fa fa-circle-o text-danger"></i>
           <span>管理者一覧</span>
+        <% end %>
+      </li>
+      <li class="treeview">
+        <%= link_to(rayadmin_projects_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span>プロジェクト</span>
         <% end %>
       </li>
     </ul>

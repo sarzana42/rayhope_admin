@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  
-  namespace :rayadmin do
-  get 'ordersheets/index'
-  end
 
   root 'top#index'
 
@@ -16,6 +12,10 @@ namespace :rayadmin do
   resources :users
   resources :customers
   resources :ordersheets
+  
+  resources :projects do
+    resources :tasks, only: [:create, :destroy]
+  end
   
   resources 'customers', only: :index do
     collection { post :import }
