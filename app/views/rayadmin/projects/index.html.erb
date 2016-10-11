@@ -14,6 +14,7 @@
                 <thead>
                 <tr>
                     <th class="col-xs-1">ID</th>
+                    <th class="col-xs-1">rest</th>
                     <th>プロジェクト名</th>
                     <th class="col-xs-2"></th>
                 </tr>
@@ -22,6 +23,7 @@
                     <% @projects.each do |project| %>
                 <tr>
                     <td><%= project.id %></td>
+                    <td>(<%= project.tasks.unfinished.count %>/<%= project.tasks.count %>)</td>
                     <td><%= link_to project.title, rayadmin_project_path(project.id) %></td>
                     <td>
                             <div class="btn btn-info btn-xs"><%= link_to "編集", edit_rayadmin_project_path(project.id) %></div>

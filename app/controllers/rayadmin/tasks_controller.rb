@@ -12,6 +12,14 @@ class Rayadmin::TasksController < Rayadmin::RayadminController
         redirect_to rayadmin_project_path(params[:project_id])
     end
     
+    def toggle
+        render nothing: true
+        @task = Task.find(params[:id])
+        @task.done = !@task.done
+        @task.save
+        # redirect_to rayadmin_project_path
+    end
+    
   private
   
     def task_params
