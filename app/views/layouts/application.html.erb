@@ -18,9 +18,6 @@
 
 <!-- コンテンツ -->
 <div class="content-wrapper">
-  <% if notice %>
-    <%= notice %>
-  <% end %>
   <% flash.each do |message_type, message| %> <!-- ここから -->
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %> <!-- ここまで追加 -->

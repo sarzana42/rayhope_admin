@@ -11,6 +11,9 @@ class Rayadmin::UsersController < Rayadmin::RayadminController
   
   def create
     @user = User.new(user_params)
+    
+      @user.set_image(file)
+    
      if @user.save
        flash[:success] = "Welcome to the Sample App!"
        redirect_to [:rayadmin,@user]
@@ -29,6 +32,7 @@ class Rayadmin::UsersController < Rayadmin::RayadminController
   
   def update
         @user = User.find params[:id]
+        @user.set_image(file)
         if @user.update(user_params)
             redirect_to [:rayadmin, @user]
         else

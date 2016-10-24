@@ -12,12 +12,13 @@ namespace :rayadmin do
   resources :users
   resources :customers
   resources :ordersheets
+  resources :notes
   
   resources :projects do
     resources :tasks, only: [:create, :destroy]
   end
   
-  post "/rayadmin/projects/:project_id/tasks/:id/toggle" => "tasks#toggle"
+  post '/projects/:project_id/tasks/:id/toggle' => 'tasks#toggle'
   
   resources 'customers', only: :index do
     collection { post :import }

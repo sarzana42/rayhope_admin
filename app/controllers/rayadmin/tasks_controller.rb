@@ -17,7 +17,7 @@ class Rayadmin::TasksController < Rayadmin::RayadminController
         @task = Task.find(params[:id])
         @task.done = !@task.done
         @task.save
-        # redirect_to rayadmin_project_path
+        #redirect_to rayadmin_project_path(params[:project_id])
     end
     
   private

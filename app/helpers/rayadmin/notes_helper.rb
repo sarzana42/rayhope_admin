@@ -1,0 +1,2 @@
+module Rayadmin::NotesHelper
+end

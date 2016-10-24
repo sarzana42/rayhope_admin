@@ -1,0 +1,24 @@
+<%= form_for([:rayadmin, @note]) do |f| %>
+  <% if @note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+      <% @note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    ユーザーID：
+    <%= f.collection_select :user_id, User.all, :id, :id, {prompt: true}, {class: "form-control user_id_field"} %>
+    タイトル：
+    <%= f.text_field :title, {class:"form-control title-field"} %>
+    内容：
+    <%= f.text_area :content, {class:"form-control content-field"} %>
+    <br>
+    <%= f.submit "保存", {class:"btn btn-primary"} %>
+  </div>
+<% end %>
