@@ -11,7 +11,7 @@ class Rayadmin::UsersController < Rayadmin::RayadminController
   
   def create
     @user = User.new(user_params)
-    file = params[:user][:image]
+    # file = params[:user][:image]
       # @user.set_image(file)
     
      if @user.save
@@ -32,7 +32,7 @@ class Rayadmin::UsersController < Rayadmin::RayadminController
   
   def update
         @user = User.find params[:id]
-        @user.set_image(file)
+        # @user.set_image(file)
         if @user.update(user_params)
             redirect_to [:rayadmin, @user]
         else

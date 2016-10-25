@@ -2,7 +2,6 @@ class Rayadmin::NotesController < Rayadmin::RayadminController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @user = User.find(params[:id])
     @notes = Note.all
   end
 
