@@ -60,7 +60,7 @@ class Rayadmin::CustomersController < Rayadmin::RayadminController
     private
     
     def customer_params
-        params.require(:customer).permit(:name1, :name2, :kana1, :kana2, :zip, :address1, :address2, :address3, :tel1, :tel2, :fax, :email)
+        params.require(:customer).permit(:name1, :name2, :kana1, :kana2, :zip, :address1, :address2, :address3, :tel1, :tel2, :fax, :email, :remark)
     end
     
 end
