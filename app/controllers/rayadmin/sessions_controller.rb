@@ -6,7 +6,7 @@ class Rayadmin::SessionsController < Rayadmin::RayadminController
     @user = User.find_by(email: params[:session][:email].downcase)
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:info] = "{@user.name}として、ログインしました。"
+      flash[:info] = "#{@user.name}として、ログインしました。"
       redirect_to [:rayadmin, @user]
     else
       flash[:danger] = "メールアドレスかパスワードが一致しません"

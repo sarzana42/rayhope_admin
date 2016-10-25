@@ -16,7 +16,7 @@ class Rayadmin::UsersController < Rayadmin::RayadminController
     
      if @user.save
        flash[:success] = "Welcome to the Sample App!"
-       redirect_to [:rayadmin,@user]
+       redirect_to [:rayadmin, @user]
      else
        render 'new'
      end
