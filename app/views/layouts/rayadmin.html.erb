@@ -42,33 +42,14 @@
             <span class="hidden-xs"><%= current_user.name %></span>
           </a>
           <ul class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header">
-              <%= gravatar_for current_user, { size: 60 } %>
-              <p>
-                <%= current_user.name %>- 本部管理者
-                <small>Member since Nov. 2012</small>
-              </p>
-            </li>
             <!-- Menu Body -->
             <li class="user-body">
-              <div class="row">
-                <div class="col-xs-4 text-center">
+                <div class="pull-right">
                   <%= link_to "Profile", rayadmin_user_path(current_user) %>
                 </div>
-                <div class="col-xs-4 text-center">
-                  <%= link_to "Setting", '#' %>
-                </div>
-                <div class="col-xs-4 text-center">
-                  <%= link_to "Setting", '#' %>
-                </div>
-              </div><!-- /.row -->
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
-              <div class="pull-left">
-                <%= link_to "Setting", '#' %>
-              </div>
               <div class="pull-right">
                 <%= link_to "Log out", rayadmin_logout_path, method: "delete" %>
               </div>
