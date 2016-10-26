@@ -1,0 +1,43 @@
+<section class="content-header">
+<h1>価格表一覧</h1>
+</section>
+
+<section class="content">
+    <div class="box">
+        <div class="box-header">
+            <%= link_to "新規作成", new_rayadmin_sprice_path %>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th class="col-xs-1">提供先</th>
+                    <th class="col-xs-1">依頼業者</th>
+                    <th class="col-xs-1">SKU</th>
+                    <th class="col-xs-2">商品名</th>
+                    <th class="col-xs-2">品番</th>
+                    <th class="col-xs-1">原価</th>
+                    <th class="col-xs-1">売価格</th>
+                    <th class="col-xs-1">E価格</th>
+                    <th class="col-xs-1">E価格（込）</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% @sprices.each do |sprice| %>
+                <tr>
+                    <td><%= sprice.teikyo %></td>
+                    <td><%= sprice.acompany %></td>
+                    <td><%= sprice.skuc %></td>
+                    <td><%= sprice.jproduct %></td>
+                    <td><%= sprice.pnumber %></td>
+                    <td><%= sprice.p1cos %></td>
+                    <td><%= sprice.p2cos %></td>
+                    <td><%= sprice.p3cos %></td>
+                    <td><%= sprice.p4cos %></td>
+                </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

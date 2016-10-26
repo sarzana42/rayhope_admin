@@ -1,0 +1,50 @@
+      <%= form_for([:rayadmin, @sprice]) do |f| %>
+        <% if @sprice.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@sprice.errors.count, "error") %> prohibited this sprice from being saved:</h2>
+      
+            <ul>
+            <% @sprice.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        
+        <div class="box-body no-padding">
+                  <table class="table table-bordered">
+                      <thead>
+                      <tr>
+                          <th class="col-xs-1">提供先</th>
+                          <th class="col-xs-1">依頼業者</th>
+                          <th class="col-xs-1">SKU</th>
+                          <th class="col-xs-2">商品名</th>
+                          <th class="col-xs-2">品番</th>
+                          <th class="col-xs-1">原価</th>
+                          <th class="col-xs-1">売価格</th>
+                          <th class="col-xs-1">E価格</th>
+                          <th class="col-xs-1">E価格（込）</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                          <%= form_for([:rayadmin, @sprice]) do |f| %>
+                      <tr>
+                          <td><%= f.collection_select :teikyo, Teikyo.all, :name, :name, {prompt: true}, {class: "form-control user_name_field"} %></td>
+                          <td><%= f.collection_select :acompany, Acompany.all, :aname, :aname, {prompt: true}, {class: "form-control user_name_field"} %></td>
+                          <td><%= f.text_field :skuc, {class:"form-control title-field"} %></td>
+                          <td><%= f.text_field :jproduct, {class:"form-control title-field"} %></td>
+                          <td><%= f.text_field :pnumber, {class:"form-control title-field"} %></td>
+                          <td><%= f.text_field :p1cos, {class:"form-control title-field"} %></td>
+                          <td><%= f.text_field :p2cos, {class:"form-control title-field"} %></td>
+                          <td><%= f.text_field :p3cos, {class:"form-control title-field"} %></td>
+                          <td><%= f.text_field :p4cos, {class:"form-control title-field"} %></td>
+                      </tr>
+                      <% end %>
+                      </tbody>
+                  </table>
+              </div>
+      
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>

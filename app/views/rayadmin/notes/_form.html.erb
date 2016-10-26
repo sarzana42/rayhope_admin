@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="actions">
-    ユーザーID：
-    <%= f.collection_select :user_id, User.all, :id, :id, {prompt: true}, {class: "form-control user_id_field"} %>
+    ユーザー：
+    <%= f.collection_select :user_id, User.all, :name, :name, {prompt: true}, {class: "form-control user_name_field"} %>
     タイトル：
     <%= f.text_field :title, {class:"form-control title-field"} %>
     内容：

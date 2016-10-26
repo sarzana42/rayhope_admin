@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024152530) do
+ActiveRecord::Schema.define(version: 20161026071719) do
+
+  create_table "acompanies", force: :cascade do |t|
+    t.string   "aname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string   "name1"
@@ -74,6 +80,21 @@ ActiveRecord::Schema.define(version: 20161024152530) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sprices", force: :cascade do |t|
+    t.string   "teikyo"
+    t.string   "acompany"
+    t.string   "skuc"
+    t.string   "jproduct"
+    t.string   "eproduct"
+    t.string   "pnumber"
+    t.string   "p1cos"
+    t.string   "p2cos"
+    t.string   "p3cos"
+    t.string   "p4cos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
     t.boolean  "done",       default: false
@@ -83,6 +104,12 @@ ActiveRecord::Schema.define(version: 20161024152530) do
   end
 
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id"
+
+  create_table "teikyos", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
