@@ -1,0 +1,18 @@
+<div class="col-xs-6 col-md-2">
+	<div class="thumbnail">
+		<img src="http://bootstrap3.cyberlab.info/img/sample-256x256.png">
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @pimage.pimage.url %>
+</p>
+		<%= @pimage.ptitle %>
+		<%= @pimage.purl %>
+		<%= @pimage.pcomment %>
+		<%= @pimage.ptag %>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_rayadmin_pimage_path(@pimage) %> |
+<%= link_to 'Back', rayadmin_pimages_path %>|
+<%= link_to 'Show', [:rayadmin, @pimage] %>|
+<%= link_to 'Destroy', [:rayadmin, @pimage], method: :delete, data: { confirm: 'Are you sure?' } %>

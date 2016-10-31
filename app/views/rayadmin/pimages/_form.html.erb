@@ -1,0 +1,32 @@
+<%= form_for([:rayadmin, @pimage]) do |f| %>
+  <% if @pimage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pimage.errors.count, "error") %> prohibited this pimage from being saved:</h2>
+
+      <ul>
+      <% @pimage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <div class="field">
+      <%= image_tag @pimage.image.url if @pimage.pimage? %>
+      <%= f.label :pimage %><br>
+      <%= f.file_field :pimage %>
+      <%= f.hidden_field :pimage_cache %>
+      タイトル：
+      <%= f.text_field :ptitle, {class:"form-control title-field"} %>
+      URL：
+      <%= f.text_field :purl, {class:"form-control title-field"} %>
+      コメント：
+      <%= f.text_field :pcomment, {class:"form-control content-field"} %>
+      タグ：
+      <%= f.text_field :ptag, {class:"form-control content-field"} %>
+      <br>
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

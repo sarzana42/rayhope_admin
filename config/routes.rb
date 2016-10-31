@@ -14,6 +14,7 @@ namespace :rayadmin do
   resources :ordersheets
   resources :notes
   resources :sprices
+  resources :pimages
   
   resources :projects do
     resources :tasks, only: [:create, :destroy]

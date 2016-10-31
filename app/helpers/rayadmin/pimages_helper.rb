@@ -1,0 +1,2 @@
+module Rayadmin::PimagesHelper
+end

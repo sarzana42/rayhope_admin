@@ -93,6 +93,12 @@
           <span>売上管理</span>
         <% end %>
       </li>
+      <li class="treeview">
+        <%= link_to(rayadmin_customers_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span>ブログ</span>
+        <% end %>
+      </li>
     </ul>
     <ul class="sidebar-menu">
      <li class="header">管理者メニュー</li>
@@ -118,6 +124,12 @@
         <%= link_to(rayadmin_sprices_path) do %>
           <i class="fa fa-circle-o text-danger"></i>
           <span>価格表</span>
+        <% end %>
+      </li>
+      <li class="treeview">
+        <%= link_to(rayadmin_pimages_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span>画像</span>
         <% end %>
       </li>
     </ul>

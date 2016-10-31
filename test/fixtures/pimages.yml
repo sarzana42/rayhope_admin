@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ptitle: MyString
+  purl: MyString
+  pcomment: MyString
+  ptag: MyString
+
+two:
+  ptitle: MyString
+  purl: MyString
+  pcomment: MyString
+  ptag: MyString
