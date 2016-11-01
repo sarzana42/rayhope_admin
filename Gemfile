@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "ransack"
 gem 'carrierwave'
 gem 'fog'
+gem 'ckeditor'
+gem 'rmagick'
+gem 'mini_magick'
 gem 'cloudinary'
 # gem 'roo'
 

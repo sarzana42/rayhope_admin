@@ -3,7 +3,7 @@
 class PimageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -18,6 +18,7 @@ class PimageUploader < CarrierWave::Uploader::Base
   
   # JPEG 形式に変換して保存
 process convert: "jpg" 
+process :resize_to_limit => [500, 500]
 
 # 拡張子 jpg jpeg gif png のみ許可
 def extension_white_list
@@ -26,7 +27,7 @@ end
 
 # ファイル名は original.jpg で保存 (jpeg変換しているので拡張子は固定)
 def filename
-  "original.jpg" if original_filename
+  "#{model.id}.jpg" if original_filename
 end
   
 
