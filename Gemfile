@@ -23,6 +23,7 @@ gem 'rmagick'
 gem 'mini_magick'
 gem 'cloudinary'
 # gem 'roo'
+gem "rails_12factor", group: :production
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

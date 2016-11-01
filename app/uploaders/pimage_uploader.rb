@@ -27,7 +27,7 @@ end
 
 # ファイル名は original.jpg で保存 (jpeg変換しているので拡張子は固定)
 def filename
-  "#{model.id}.jpg" if original_filename
+  "original.jpg" if original_filename
 end
   
 

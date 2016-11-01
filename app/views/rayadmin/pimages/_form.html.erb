@@ -13,7 +13,7 @@
 
   <div class="actions">
     <div class="field">
-      <%= image_tag @pimage.image.url if @pimage.pimage? %>
+      <%= image_tag @pimage.pimage.url if @pimage.pimage? %>
       <%= f.label :pimage %><br>
       <%= f.file_field :pimage %>
       <%= f.hidden_field :pimage_cache %>
