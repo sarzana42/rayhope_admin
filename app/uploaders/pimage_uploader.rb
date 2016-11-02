@@ -4,7 +4,7 @@ class PimageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
    include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :fog
@@ -18,7 +18,11 @@ class PimageUploader < CarrierWave::Uploader::Base
   
   # JPEG 形式に変換して保存
 process convert: "jpg" 
-process :resize_to_limit => [500, 500]
+process resize_to_limit: [900, 900]
+
+version :thumb do
+    process resize_to_limit: [480, 360]
+end
 
 # 拡張子 jpg jpeg gif png のみ許可
 def extension_white_list

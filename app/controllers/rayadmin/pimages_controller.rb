@@ -42,7 +42,7 @@ class Rayadmin::PimagesController < Rayadmin::RayadminController
   # DELETE /pimages/1
   def destroy
     @pimage.destroy
-    redirect_to pimages_url, notice: 'Pimage was successfully destroyed.'
+    redirect_to rayadmin_pimages_url, notice: 'Pimage was successfully destroyed.'
   end
 
   private
