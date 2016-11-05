@@ -4,4 +4,10 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+  
+  def pictures
+    @pimages = Pimage.all
+  end
+  def design
+  end
 end

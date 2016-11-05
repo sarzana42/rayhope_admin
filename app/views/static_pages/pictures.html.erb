@@ -1,0 +1,15 @@
+<div class="box">    
+    <div class="box-body">
+      <div class="row">
+        <% @pimages.each do |pimage| %>
+        
+          <div class="col-xs-6 col-md-2">
+        		<div id="img-box" class="thumbnail">
+        			<%= image_tag pimage.pimage.thumb.url %>
+        			<div id="img-box-mini"><p id="img-box-text"><%= link_to pimage.ptitle, rayadmin_pimage_path(pimage.id) %></p></div>
+        		</div>
+        	</div>
+        <% end %>
+      </div>
+    </div>
+</div>
