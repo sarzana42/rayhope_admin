@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
                     
   has_many :notes
+  has_many :markinfos
   
   # def set_image(file)
   #   file = params[:user][:image]

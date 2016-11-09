@@ -10,4 +10,9 @@ class StaticPagesController < ApplicationController
   end
   def design
   end
+  
+  def markinfos
+    @pimages = Pimage.all
+  end
+  
 end

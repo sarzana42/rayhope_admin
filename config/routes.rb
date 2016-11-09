@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   get 'static_pages/pictures'
   get 'static_pages/design'
+  get 'static_pages/markinfos'
 
 namespace :rayadmin do
   root 'admins#home'
@@ -19,6 +20,7 @@ namespace :rayadmin do
   resources :notes
   resources :sprices
   resources :pimages
+  resources :markinfos
   
   resources :projects do
     resources :tasks, only: [:create, :destroy]

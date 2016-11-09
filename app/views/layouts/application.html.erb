@@ -24,7 +24,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">RayhopeMe</a>
+      <%= link_to "RayhopeMe", root_path, {class: "navbar-brand"} %>
+      
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,25 +60,26 @@
 <div class="col-sm-2">
   <div class="list-group table-of-contents">
     
-<ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Cras justo odio
-  </li>
-  <li class="list-group-item">
-    <span class="badge">2</span>
-    Dapibus ac facilisis in
-  </li>
-  <li class="list-group-item">
-    <span class="badge">1</span>
-    Morbi leo risus
-  </li>
-</ul>
+<!--<ul class="list-group">-->
+<!--  <li class="list-group-item">-->
+<!--    <span class="badge">14</span>-->
+<!--    Cras justo odio-->
+<!--  </li>-->
+<!--  <li class="list-group-item">-->
+<!--    <span class="badge">2</span>-->
+<!--    Dapibus ac facilisis in-->
+<!--  </li>-->
+<!--  <li class="list-group-item">-->
+<!--    <span class="badge">1</span>-->
+<!--    Morbi leo risus-->
+<!--  </li>-->
+<!--</ul>-->
     <%= link_to 'デザイン作ります。', static_pages_design_path, {class:"list-group-item"} %>
     <%= link_to '過去写真集', static_pages_pictures_path, {class:"list-group-item"} %>
-    <a class="list-group-item" href="#buttons">スポーツマーク</a>
+    <%= link_to 'スポーツユニフォーム', static_pages_markinfos_path, {class:"list-group-item"} %>
+    <a class="list-group-item" href="#buttons">スポーツユニフォーム</a>
     <a class="list-group-item" href="#typography">マーク研究室</a>
-    <a class="list-group-item" href="#tables">Tables</a>
+    <a class="list-group-item" href="#tables">家紋集</a>
     <a class="list-group-item" href="#forms">Forms</a>
     <a class="list-group-item" href="#navs">Navs</a>
     <a class="list-group-item" href="#indicators">Indicators</a>
