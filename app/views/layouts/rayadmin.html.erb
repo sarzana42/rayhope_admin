@@ -75,6 +75,29 @@
     <!-- ログイン中の表示 -->
     <ul class="sidebar-menu">
       <li class="header">メニュー</li>
+      
+      <li class="treeview">
+        <%= link_to(rayadmin_markinfos_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span>ブログ</span>
+        <% end %>
+      </li>
+      <li class="treeview">
+        <%= link_to(rayadmin_markinfos_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span>画像（家紋集）</span>
+        <% end %>
+      </li>
+      <li class="treeview">
+        <%= link_to(rayadmin_markinfos_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span>画像（過去実績）</span>
+        <% end %>
+      </li>
+      
+    </ul>
+    <ul class="sidebar-menu">
+     <li class="header">管理者メニュー</li>
       <li class="treeview">
         <%= link_to(rayadmin_customers_path) do %>
           <i class="fa fa-circle-o text-info"></i>
@@ -93,16 +116,6 @@
           <span>売上管理</span>
         <% end %>
       </li>
-      <li class="treeview">
-        <%= link_to(rayadmin_markinfos_path) do %>
-          <i class="fa fa-circle-o text-danger"></i>
-          <span>ブログ</span>
-        <% end %>
-      </li>
-      
-    </ul>
-    <ul class="sidebar-menu">
-     <li class="header">管理者メニュー</li>
      <li class="treeview">
         <%= link_to(rayadmin_users_path) do %>
           <i class="fa fa-circle-o text-danger"></i>
@@ -131,6 +144,18 @@
         <%= link_to(rayadmin_pimages_path) do %>
           <i class="fa fa-circle-o text-danger"></i>
           <span>画像</span>
+        <% end %>
+      </li>
+      <li class="treeview">
+        <%= link_to(rayadmin_pimages_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span></span>
+        <% end %>
+      </li>
+      <li class="treeview">
+        <%= link_to(rayadmin_pimages_path) do %>
+          <i class="fa fa-circle-o text-danger"></i>
+          <span></span>
         <% end %>
       </li>
     </ul>
