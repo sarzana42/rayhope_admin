@@ -15,8 +15,9 @@
  */
 #img-box{
   position: relative;
-  width: 150px;
+  width: 200px;
   height: 200px;
+  
 }
 #img-box img{
   width: auto;
@@ -27,15 +28,32 @@
 }
 #img-box-mini{
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 0px;
   width:100%;
-  color: #fff;
-  
+
+  background-color: rgba(50, 50, 50, 0.8);
  }
 #img-box-text{
   text-align: center;
+  font-size: medium;
   width: 100%;
-  padding: 2px;
-  background-color: rgba(150, 150, 150, 0.8);
+  padding: 10px;
+}
+#img-box a{
+  color: #fff;
+}
+#kamonarticle .kimg-box {
+  width: 250px;
+  height: 250px;
+}
+#kamonarticle .kimg-box img {
+  width: auto;
+  height: auto;
+  max-width: 250px;
+  max-height: 250px;
+}
+#kamonarticle .kdiscription {
+  width: 100%;
+  padding: 10px 10px 10px 0px;
 }

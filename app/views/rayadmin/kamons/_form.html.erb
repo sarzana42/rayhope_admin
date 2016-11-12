@@ -1,0 +1,28 @@
+<%= form_for([:rayadmin, @kamon]) do |f| %>
+  <% if @kamon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kamon.errors.count, "error") %> prohibited this pimage from being saved:</h2>
+
+      <ul>
+      <% @kamon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <div class="field">
+      <%= image_tag @kamon.kamonpic.url if @kamon.kamonpic? %>
+      <%= f.label :kamonpic %><br>
+      <%= f.file_field :kamonpic %>
+      <%= f.hidden_field :kamonpic_cache %>
+      タイトル：
+      <%= f.text_field :title, {class:"form-control title-field"} %>
+      説明：
+      <%= f.cktext_area :discription, {class:"form-control title-field"} %>
+      <br>
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

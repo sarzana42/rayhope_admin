@@ -1,0 +1,2 @@
+module Rayadmin::KamonsHelper
+end

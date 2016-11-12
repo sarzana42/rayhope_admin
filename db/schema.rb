@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112022316) do
+ActiveRecord::Schema.define(version: 20161112041017) do
 
   create_table "acompanies", force: :cascade do |t|
     t.string   "aname"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 20161112022316) do
     t.string   "groupcus"
     t.string   "kubun"
     t.string   "maildm"
+  end
+
+  create_table "kamons", force: :cascade do |t|
+    t.string   "title"
+    t.text     "discription"
+    t.string   "kamonpic"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "kubuns", force: :cascade do |t|
