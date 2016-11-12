@@ -12,6 +12,43 @@
 <section class="content">
   <div class="box">
     <div class="box-body">
+      <% if @customer.piccus? %>
+　　    <%= image_tag @customer.piccus.thumb.url %>
+　    <% else %>
+　　    <%= image_tag 'noimage.gif' %>
+　    <% end %>
+　    <div class="form-group">
+          <label for="id" class="col col-xs-12 col-sm-4 col-md-3 control-label">ID</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.id %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="kubun" class="col col-xs-12 col-sm-4 col-md-3 control-label">区分</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.kubun %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="maildm" class="col col-xs-12 col-sm-4 col-md-3 control-label">許可項目</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.maildm %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="groupcus" class="col col-xs-12 col-sm-4 col-md-3 control-label">所属</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.groupcus %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
       <div class="form-group">
           <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
           <div class="col col-xs-5 col-sm-3 col-md-3">
@@ -99,14 +136,31 @@
           </div>
           <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
         </div>
+        <br>
         <div class="form-group">
-          <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">備考欄</label>
+          <label for="danjo" class="col col-xs-12 col-sm-4 col-md-3 control-label">性別</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.danjo %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="birth" class="col col-xs-12 col-sm-4 col-md-3 control-label">生年月日</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= @customer.birth %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+      </div>
+      <br>
+        <div class="form-group">
+          <label for="remark" class="col col-xs-12 col-sm-4 col-md-3 control-label">備考欄</label>
           <div class="col col-xs-12 col-sm-6 col-md-7">
               <%= @customer.remark %>
           </div>
           <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
         </div>
-      
+        <br>
     </div>
   </div>    
 </section>

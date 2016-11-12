@@ -14,7 +14,27 @@
              <%= full_message %>
           <% end %>
         <% end %>
-
+        <div class="form-group">
+          <label for="kubun" class="col col-xs-12 col-sm-4 col-md-3 control-label">区分</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.collection_select :kubun, Kubun.all, :id, :name, {prompt: true}, {class: "form-control"} %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
+        <div class="form-group">
+          <label for="maildm" class="col col-xs-12 col-sm-4 col-md-3 control-label">許可項目</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.text_field :maildm, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
+        <div class="form-group">
+          <label for="groupcus" class="col col-xs-12 col-sm-4 col-md-3 control-label">所属</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.text_field :groupcus, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
         <div class="form-group">
           <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
           <div class="col col-xs-5 col-sm-3 col-md-3">
@@ -105,7 +125,36 @@
           </div>
           <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
         </div>
-
+        <div class="form-group">
+          <label for="danjo" class="col col-xs-12 col-sm-4 col-md-3 control-label">男・女</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.text_field :danjo, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
+        <div class="form-group">
+          <label for="birth" class="col col-xs-12 col-sm-4 col-md-3 control-label">生年月日</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+            <%= f.date_field :birth, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
+        <div class="form-group">
+          <label for="piccus" class="col col-xs-12 col-sm-4 col-md-3 control-label">名刺</label>
+          <div class="col col-xs-5 col-sm-3 col-md-3">
+              <%= image_tag @customer.piccus.url if @customer.piccus? %>
+              <%= f.label :piccus %><br>
+              <%= f.file_field :piccus %>
+          </div>
+          <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+        </div>
+        <div class="form-group">
+          <label for="remark" class="col col-xs-12 col-sm-4 col-md-3 control-label">備考欄</label>
+          <div class="col col-xs-12 col-sm-6 col-md-7">
+            <%= f.text_area :remark, class: 'form-control' %>
+          </div>
+          <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
+        </div>
         <div class="form-group">
           <div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
             <%= f.submit class: "btn btn-primary" %>

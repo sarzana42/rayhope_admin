@@ -140,12 +140,11 @@
           <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
         </div>
         <div class="form-group">
-          <label for="birth" class="col col-xs-12 col-sm-4 col-md-3 control-label">生年月日</label>
+          <label for="piccus" class="col col-xs-12 col-sm-4 col-md-3 control-label">名刺</label>
           <div class="col col-xs-5 col-sm-3 col-md-3">
               <%= image_tag @customer.piccus.url if @customer.piccus? %>
               <%= f.label :piccus %><br>
               <%= f.file_field :piccus %>
-             
           </div>
           <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
         </div>

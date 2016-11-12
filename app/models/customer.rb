@@ -1,4 +1,5 @@
 class Customer < ActiveRecord::Base
+    mount_uploader :piccus, PiccusUploader
     require 'csv'
     require 'kconv'
     before_save { self.email = self.email.downcase }

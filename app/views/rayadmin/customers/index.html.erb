@@ -24,15 +24,22 @@
     </div><!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
       <table class="table table-hover">
+        <thead>
         <tr>
+          <th>ID</th>
+          <th>所属</th>
           <th>名前</th>
           <th>名前2</th>
           <th>都道府県</th>
           <th>電話番号</th>
           <th>メールアドレス</th>
         </tr>
+        </thead>
+        <tbody>
         <% @customers.each do |customer| %>
         <tr>
+        <td><%= customer.id %></td>
+        <td><%= customer.groupcus %></td>
         <td><%= link_to customer.name1, rayadmin_customer_path(customer) %></td>
         <td><%= customer.name2 %></td>
         <td><%= customer.address1 %></td>
@@ -40,6 +47,7 @@
         <td><%= customer.email %></td>
         </tr>
         <% end %>
+        </tbody>
       </table>
       
       <p>
