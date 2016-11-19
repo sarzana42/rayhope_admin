@@ -12,14 +12,18 @@
             <% @kamons.each do |kamon| %>
             
               <div class="col-xs-6 col-md-2">
+                
             		<div id="img-box" class="thumbnail">
             			<%= image_tag kamon.kamonpic.thumb.url %>
-            			<div id="img-box-mini"><p id="img-box-text"><%= link_to kamon.title, rayadmin_kamon_path(kamon.id) %></p></div>
+            			<div id="img-box-mini"><p id="img-box-text"><%= link_to kamon.title, rayadmin_kamon_path(kamon.id) %></p>
+            			</div>
+            			<div id="img-box-mini-footer"><p class="img-box-tag"><%= render partial: 'tags', locals: { tags: kamon.tags } %></p></div>
             		</div>
             	</div>
+            	
             <% end %>
           </div>
-          <%= render 'tags' %>
+          
         </div>
     </div>
 </section>

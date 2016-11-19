@@ -1,3 +1,3 @@
 <% tags.each do |tag| %>
-  <%= link_to "#{tag.name} (#{tag.taggings_count})", kamons_path(tag: tag.name) %>
+  <%= link_to "#{tag.name} (#{tag.taggings_count})", rayadmin_kamons_path(tag: tag.name) %>
 <% end %>

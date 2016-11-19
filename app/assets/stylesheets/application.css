@@ -30,17 +30,27 @@
 }
 #img-box-mini{
   position: absolute;
+  bottom: 10px;
+  left: 0px;
+  width:100%;
+  background-color: rgba(50, 50, 50, 0.8);
+ }
+ #img-box-mini-footer{
+  position: absolute;
   bottom: 0px;
   left: 0px;
   width:100%;
-
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: rgba(20, 20, 20, 0.8);
  }
 #img-box-text{
   text-align: center;
   font-size: medium;
   width: 100%;
   padding: 10px;
+}
+.img-box-tag{
+  text-align: center;
+  font-size: 5px;
 }
 #img-box a{
   color: #fff;
@@ -58,6 +68,11 @@
 #kamonarticle .kdiscription {
   width: 100%;
   padding: 10px 10px 10px 0px;
+}
+.kamontitle {
+  background:#eeeeee;
+  border:1px solid #cccccc;
+  padding:5px 10px;
 }
 
 .spacer { margin-top: 5px; }
