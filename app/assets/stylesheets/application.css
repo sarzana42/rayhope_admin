@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require jquery.tagit
+ *= require tagit.ui-zendesk
  *= require_self
  */
 #img-box{
@@ -57,3 +59,16 @@
   width: 100%;
   padding: 10px 10px 10px 0px;
 }
+
+.spacer { margin-top: 5px; }
+.spacer10 { margin-top: 10px; }
+.spacer15 { margin-top: 15px; }
+.spacer20 { margin-top: 20px; }
+.spacer25 { margin-top: 25px; }
+.spacer30 { margin-top: 30px; }
+.spacer35 { margin-top: 35px; }
+.spacer40 { margin-top: 40px; }
+.spacer45 { margin-top: 45px; }
+.spacer50 { margin-top: 50px; }
+.spacer100 { margin-top: 100px; }
+.spacer200 { margin-top: 200px; }

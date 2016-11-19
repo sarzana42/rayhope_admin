@@ -1,9 +1,13 @@
 class Rayadmin::KamonsController < Rayadmin::RayadminController
   before_action :set_kamon, only: [:show, :edit, :update, :destroy]
+  before_action :set_kamon_tags_to_gon, only: [:edit]
+  before_action :set_available_tags_to_gon, only: [:new, :edit]
 
   # GET /kamons
   def index
-    @kamons = Kamon.all
+    @kamons = params[:tag].present? ? Kamon.tagged_with(params[:tag]) : Kamon.all
+    @kamons = @kamons.all.includes(:tags)
+    
   end
 
   # GET /kamons/1
@@ -44,6 +48,8 @@ class Rayadmin::KamonsController < Rayadmin::RayadminController
     @kamon.destroy
     redirect_to rayadmin_kamons_url, notice: 'Kamon was successfully destroyed.'
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -53,6 +59,12 @@ class Rayadmin::KamonsController < Rayadmin::RayadminController
 
     # Only allow a trusted parameter "white list" through.
     def kamon_params
-      params.require(:kamon).permit(:title, :discription, :kamonpic, :kamonpic_cache)
+      params.require(:kamon).permit(:title, :discription, :kamonpic, :kamonpic_cache, :tag_list)
+    end
+    def set_kamon_tags_to_gon
+      gon.kamon_tags = @kamon.tag_list
+    end
+    def set_available_tags_to_gon
+      gon.available_tags = Kamon.tags_on(:tags).pluck(:name)
     end
 end
