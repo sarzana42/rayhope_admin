@@ -1,2 +1,157 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rayhope</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="assets/home.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="bg-body">
+    <div class="header">
+      <div class="navbar navbar-default navbar-static-top header">
+        <div class="clearfix header-container">
+          <div class="navbar-header">
+            <h1 class="pull-left site-logo"><img src="http://www.rayhope.com/meimage/txt_logo.png" alt="RayhopeMe"></h1>
+            <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          </div>
+          <div id="navbar" class="navbar-right navbar-collapse collapse menu-global">
+            <ul class="nav navbar-nav menu-global-main">
+              <li><%= link_to 'デザイン画集', static_pages_design_path %></li>
+              <li><a href="">加工内容</a></li>
+              <li><a href="">スポーツマーク</a></li>
+              <li><a href="">家紋集</a></li>
+              <li><a href="">写真集</a></li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-visual">
+      <div class="text-center">
+        <p class="main-visual-catch"><img src="http://www.rayhope.com/meimage/txt_catch.png" alt="Mark is Magic"></p>
+        <p class="main-visual-description">レイホープはマークの研究・開発している会社です。<br>通常のプリント・刺繍はもちろんのこと全く新しいマークやデザインを製作することができます。<br>ご自分のアイデアやデザインを形にしたい方は是非お問合せください。</p>
+      </div>
+    </div>
+    <div class="main" id="backmovie">
+      <div class="content">
+        <div class="container-fluid container-main features">
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <dl>
+                <dt class="text-center">デザイン画集</dt>
+                <dd><img src="http://www.rayhope.com/meimage/thumb_featureConcept.jpg" alt="コンセプト" class="img-thumbnail">
+                  <p>お客様のイメージしたデザインを納得いくまでサポートします。</p><a href="" class="btn-more">More</a>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <dl>
+                <dt class="text-center">加工内容</dt>
+                <dd><img src="http://www.rayhope.com/meimage/thumb_featureMenu.jpg" alt="メニュー" class="img-thumbnail">
+                  <p>マークに関してあらゆる分野の業務を行っております。独自開発・研究しオンリーワンのマークを提供しています。</p><a href="" class="btn-more">More</a>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <dl>
+                <dt class="text-center">スポーツマーク</dt>
+                <dd><img src="http://www.rayhope.com/meimage/thumb_featureStaff.jpg" alt="スタッフ" class="img-thumbnail">
+                  <p>ハイレベルなスポーツマーキングを提供しております。縁取刺繍、ワッペンなどチームのイメージにあったユニフォームを作成いたします。</p><a href="" class="btn-more">More</a>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <dl>
+                <dt class="text-center">家紋集</dt>
+                <dd><img src="http://www.rayhope.com/meimage/thumb_featureBlog.jpg" alt="ブログ" class="img-thumbnail">
+                  <p>家紋マークを提供しています。弊社独自のマーク素材「メタリィフ」がおすすめです！独特な輝きがき高級感を醸し出します。</p><a href="" class="btn-more">More</a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid container-main shop-info">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="news">
+                <h2 class="shop-info-title">Shop News</h2>
+                <div class="media">
+                  <div class="media-left media-middle">
+                    <div class="media-left-size"><img src="http://www.rayhope.com/meimage/thumb_news01.jpg" alt="" class="img-thumbnail"></div>
+                  </div>
+                  <div class="media-body media-middle">
+                    <h3 class="media-heading">新作のマークができました。。</h3>
+                    <p>プリントでもない刺繍でもない全く新しいマークとなります。オーロラの輝きと接着力の強さが売りのマークがきできました。これを使うとさまざまな加工ができます。</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left media-middle">
+                    <div class="media-left-size"><img src="http://www.rayhope.com/meimage/thumb_news02.jpg" alt="" class="img-thumbnail"></div>
+                  </div>
+                  <div class="media-body media-middle">
+                    <h3 class="media-heading">カットインマークができました</h3>
+                    <p>熱中症対策マーキングができました。激しいスポーツや炎天下でのスポーツでは十分な対策をすることが選手にとって大切なことです。</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left media-middle">
+                    <div class="media-left-size"><img src="http://www.rayhope.com/meimage/thumb_news03.jpg" alt="" class="img-thumbnail"></div>
+                  </div>
+                  <div class="media-body media-middle">
+                    <h3 class="media-heading">エアーメタリィフができました</h3>
+                    <p>これもメタリィフを使った加工になります。刺繍では３D、メタリィフではエアーといいます。刺繍ではできない場所にも加工することができます。特にキャップのつばなど硬い場所への加工が魅力アップです。</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left media-middle">
+                    <div class="media-left-size"><img src="http://www.rayhope.com/meimage/thumb_news04.jpg" alt="" class="img-thumbnail"></div>
+                  </div>
+                  <div class="media-body media-middle">
+                    <h3 class="media-heading">パワーメタリィフができました。</h3>
+                    <p>加圧効果を狙ってさまざまな道具が出ていますが、パワーメタリィフはコンプレッションウェアに好きな場所を加工することで、加圧効果を実現することができます。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="access">
+                <h2 class="shop-info-title">Access</h2>
+                <div class="access-gmap">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13072.242259345261!2d135.870759!3d35.005189!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1c7e13b1565c1b3!2z5bCP5aOy5ZWP5bGL44Gp44Gj44Go44GT44KA!5e0!3m2!1sja!2sjp!4v1479991932858" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <h3 class="access-title"有限会社レイホープ</h3>
+                <p>〒520-0043 滋賀県大津市中央四丁目1番14号</p>
+                <p><span>[営業時間] 10:00 ~ 20:00</span><span>[定休日] 日曜日、祝日</span></p>
+                <p><span>[Free] 0120-35-2603</span><span>[TEL] 077-522-7666</span></p>
+                <p><span>[Fax] 050-3834-2603</span></p>
+                <p><span>[小売問屋どっとこむ] <a href="http://www.kouridonya.com">http://www.kouridonya.com</a></span></p>
+                <ul class="nav navbar-nav menu-global-sns">
+                  <li><a href=""><img src="http://www.rayhope.com/meimage/icon_fb.png" alt=""></a></li>
+                  <li><a href=""><img src="http://www.rayhope.com/meimage/icon_tw.png" alt=""></a></li>
+                  <li><a href=""><img src="http://www.rayhope.com/meimage/icon_ig.png" alt=""></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="text-center footer-totop"><a href="#" class="btn-totop"><img src="http://www.rayhope.com/meimage/icon_toTop.jpg" alt="トップに戻る"></a></div>
+      <div class="cantainer footer-copy">
+        <p class="text-center">Copyright 2016 有限会社レイホープ All Right Reserved</p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="assets/jquery.tubular.1.0.js"></script>-->
+  </body>
+  </html>

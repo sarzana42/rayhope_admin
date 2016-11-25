@@ -14,7 +14,13 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require tag-it
-//= require turbolinks
 //= require ckeditor/init
+//= require jquery.tubular.1.0
 //= require_tree .
 
+// $(function(){
+//     $('document').ready(function() {
+//         var options = { videoId: 'pPrO2jlay40'};
+//         $('#backmovie').tubular(options);
+//     });
+// });
