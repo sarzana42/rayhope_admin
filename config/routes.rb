@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'kamonups', to: 'kamon_ups#index'
+  get '/kamonups/:id', to: 'kamon_ups#show'
+
   mount Ckeditor::Engine => '/ckeditor'
   root 'top#index'
 

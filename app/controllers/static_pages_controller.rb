@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
   
   def pictures
-    @pimages = Pimage.all
+    @kamons = Kamon.all
   end
   def design
   end
