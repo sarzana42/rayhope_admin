@@ -26,6 +26,7 @@ namespace :rayadmin do
   resources :pimages
   resources :markinfos
   resources :kamons
+  resources :performs
   
   resources :projects do
     resources :tasks, only: [:create, :destroy]

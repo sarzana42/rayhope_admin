@@ -1,0 +1,27 @@
+<section class="content">
+    <div class="box">
+        <div class="box-header">
+            <%= link_to 'Edit', edit_rayadmin_perform_path(@perform), {class:"btn btn-xs btn-success"} %> 
+            <%= link_to 'Back', rayadmin_performs_path, {class:"btn btn-xs btn-primary"} %>
+            <%= link_to 'Show', [:rayadmin, @perform], {class:"btn btn-xs btn-warning"} %>
+            <%= link_to 'Destroy', [:rayadmin, @perform], method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-xs btn-danger" %>
+        </div>
+        <div class="box-body">
+            
+            <div class="col-md-9 col-md-9">
+            	<div id="kamonarticle">
+            	    <div class="kimg-box">
+                          <%= image_tag @perform.performimage.url %>
+                    </div>
+                    <div class="kamontitle">
+                        <h1><%= @perform.title %></h1>
+                    </div>
+                    <div class="kdiscription">
+            		    <%== @perform.description %>
+            		</div>
+            	</div>
+            </div>    
+
+        </div>
+    </div>
+</section>
